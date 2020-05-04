@@ -5,23 +5,70 @@
     <title>Résumé</title>
     <link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">
     <style>
-      .contacts li a.twitter:hover {
+    .contacts li a.twitter:hover {
      color: #0088cc;
      }
 
-     .contacts li a.instagram:hover {
+    .contacts li a.instagram:hover {
      color: rgb(255, 0, 106);
      }
+
+    main {
+      background-image: url(./assets/background-image.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      } 
+
+    .page[style^="border-color"]:before {
+
+      border-width: 0.5em;
+      border-style: solid none solid none;
+      }
+
+      [data-tag] > *:first-child:after {
+        font-size: 0.6em;
+        line-height: 1rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0em 0.75em;
+        border-radius: 15px;
+        height: 1rem;
+        margin-left: 0.5em;
+        margin-top: -1px;
+        vertical-align: middle;
+        box-shadow: inset 0 0 0 1px;
+        opacity: 0.5;
+        transition: opacity 0.2s linear;
+      }
+      [data-tag]:hover > *:first-child:after {
+        color: #ffffff;
+        opacity: 1;
+        box-shadow: none;
+      }
+      [data-tag="work"] > *:first-child:after { content: "work"; }
+      [data-tag="business"] > *:first-child:after { content: "business"; }
+      [data-tag="awards"] > *:first-child:after { content: "awards"; }
+      [data-tag="cinematograph"] > *:first-child:after { content: "cinematograph"; }
+      [data-tag="education"] > *:first-child:after { content: "contribution to education"; }
+      [data-tag="work"]:hover > *:first-child:after { background: rgb(0, 0, 134); }
+      [data-tag="business"]:hover > *:first-child:after { background: rgb(1, 121, 61); }
+      [data-tag="awards"]:hover > *:first-child:after { background: rgb(255, 196, 0); }
+      [data-tag="education"]:hover > *:first-child:after { background: rgb(139, 0, 0); }
+      [data-tag="cinematograph"]:hover > *:first-child:after { background: rgb(72, 0, 75); }
+  
      </style>
   </head>
   <body>
     <main>
       <article>
-        <div class="page" style="border-color: midnightblue;">
+        <div class="page" style="border-color: rgb(11, 11, 49);">
           <div class="stackable grid">
             <div class="row">
               <div class="three wide center aligned column">
-                <!-- Avatar -->
+                <div class="avatar-wrapper">
+                  <object class="avatar" data="./assets/donald-trump-portrait-2.svg" role="img" aria-label="Profile picture"></object>
+                </div>
               </div>
               <div class="thirteen wide column">
                 <div class="stackable grid">
@@ -74,24 +121,23 @@
             <div class="row">
               <div class="ten wide column">
                 <section>
-
 								<ul class="timeline">
                   <li class="details">
                     <input type="checkbox" id="other" checked>
                     <label for="other" class="summary"><h3>Experience</h3></label>
                     <div>
                       <ul>
-									<li class="highlighted">
+									<li class="highlighted" data-tag="work">
 										<p><strong><em>2017</em></strong></p>
 										<p>Became 45<sup>th</sup> president of the United States</p>
                   </li>
 
-                  <li>
+                  <li data-tag="work">
 										<p><strong><em>2016</em></strong></p>
 										<p>Won election race with 77 votes more than Clinton, yippe-kee-yay!</p>
                   </li>
                   
-                  <li>
+                  <li data-tag="work">
 										<p><strong><em>2015</em></strong></p>
 										<p>Became the most important Republican nominating for presidential election run</p>
                   </li>
@@ -101,12 +147,12 @@
 										<p>Changed my mind and became Republican again</p>
                   </li>
 
-                  <li>
+                  <li data-tag="education">
 										<p><strong><em>2005</em></strong></p>
 										<p>Started Trump University with Michael Sexton and Jonathan Spitalny: no grades, certificates and other bureaucracy, but program offered courses in real estate, asset management entrepreneurship, and wealth creation. 98% students gave positive reviews while studying, however some of these ungrateful gringos filed lawsuits against Trump University after the course. I had to pay $25 million to settle that...</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>2002</em></strong></p>
 										<p>Acquired the former Hotel Delmonico, which was renovated and reopened in 2004 as the Trump Park Avenue. I sure do like my surname!</p>
                   </li>
@@ -116,47 +162,47 @@
 										<p>Completed Trump World Tower and joined the Democratic Party</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1999</em></strong></p>
 										<p>Started buying golf courses. They are very cheap, I have 18 of them now in USA and abroad! Also switched to the Reform Party that year</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1997</em></strong></p>
 										<p>Began a multi-building development along the Hudson River, which was named Trump Place. Me and the other investors sold our shares for $1.8 billion and that was then the biggest residential sale in the history of New York City</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1996</em></strong></p>
 										<p>Acquired the Bank of Manhattan Trust Building, which was a vacant seventy-one story skyscraper on Wall Street. After an extensive renovation, the high-rise was renamed the Trump Building</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1994</em></strong></p>
 										<p>Refurbished the Gulf and Western Building on Columbus Circle, turned it into a 44-story luxury property known as Trump International Hotel and Tower</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1989 ― 1992</em></strong></p>
 										<p>Ran a second hand airline called Trump Shuttle. What a waste of money, I had to sell it, now it is American Airlines Shuttle, btw</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1988</em></strong></p>
 										<p>Acquired the Plaza Hotel in Manhattan for $407 million, invested $50 million to restore the building and boosted it from three-star to four-star hotel (I called it "the Mona Lisa" and sold it for a lot of cash in 1995)</p>
                   </li>
 
-                  <li>
+                  <li data-tag="work">
 										<p><strong><em>1987</em></strong></p>
 										<p>Registered as a Republican</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1985</em></strong></p>
 										<p>I bought the Mar-a-Lago estate in Palm Beach and turned it into a private club.You can join if you pay $200K initiation fee (and there is another annual fee for members, it is very expensive to be rich). That year I also opened a casino called Trump Castle. My wife Ivana became a manager, because she is another Trump!</p>
                   </li>
 
-                  <li>
+                  <li data-tag="business">
 										<p><strong><em>1983</em></strong></p>
 										<p>I purchased New Jersey Generals, an American football team. I changed team's play schedule and filed an antitrust lawsuit against United States Football League, so NJG are not doing so good now, but back then they were great!</p>
                   </li>
@@ -171,12 +217,12 @@
 										<p>Purchased a 50 percent stake in the derelict Commodore Hotel and turned it into the Grand Hyatt Hotel in 2 years of remodeling</p>
                   </li>
 
-                  <li>
+                  <li data-tag="work">
 										<p><strong><em>1971</em></strong></p>
 										<p>Was promoted to president of the company and renamed it The Trump Organization</p>
                   </li>
 
-                  <li>
+                  <li data-tag="work">
 										<p><strong><em>1968</em></strong></p>
 										<p>Began my career at my father's real estate development company, Elizabeth Trump & Son</p>
                   </li>
@@ -186,7 +232,6 @@
             </div>
 
                 </ul>
-
 								<ul class="timeline">
                   <li class="details">
                     <input type="checkbox" id="other">
@@ -307,6 +352,7 @@
                       </li>
                     </ul>
                   </section>
+                  
                   <section>
                   <ul class="timeline">
                     <li class="details">
@@ -314,7 +360,7 @@
                       <label for="other" class="summary"><h3>Media Career</h3></label>
                       <div>
                         <ul>
-                          <li>
+                          <li data-tag="awards">
                             <p><strong><em>2019</em></strong></p>
                             <p>Was awarded Worst Actor and Worst Screen Combo at Golden Raspberry Awards for parts in "Death of a Nation" and "Fahrenheit 11/9"</p>
                           </li>
@@ -376,7 +422,7 @@
                                       </ul>
                                     </li>
   
-                                    <li>
+                                    <li data-tag="cinematograph">
                                       <p><strong><em>2004 ― 2008</em></strong></p>
                                       <p>Ran short-form talk radio program "Trumped!" (one to two minutes on weekdays)</p>
                                     </li>
@@ -393,7 +439,7 @@
                                       </ul>
                                     </li>
   
-                                    <li>
+                                    <li data-tag="cinematograph">
                                       <p><strong><em>2003 ― 2015</em></strong></p>
                                       <p>Produced NBC reality shows "The Apprentice" and "The Celebrity Apprentice"</p>
                                     </li>
@@ -408,7 +454,7 @@
                                       <p>Published a book "Trump: The Art of the Comeback" in coauthorship with Kate Bohner</p>
                                     </li>
   
-                                    <li>
+                                    <li data-tag="awards">
                                       <p><strong><em>1991</em></strong></p>
                                       <p>Was awarded Worst Supporting Actor at Golden Raspberry Awards for a part in "Ghosts Can't Do It"</p>
                                     </li>

@@ -66,7 +66,6 @@ var Elevator = (function() {
         elevating = true;
         startPosition = (document.documentElement.scrollTop || body.scrollTop);
         
-        // No custom duration set, so travel at pixels per millisecond. (0.75px per ms)
         if( !customDuration ) {
             duration = (startPosition * 1.5);
         }

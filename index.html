@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>Résumé</title>
     <link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">
+    <script src='./elevator.js'></script>
+
     <style>
     .contacts li a.twitter:hover {
      color: #0088cc;
@@ -14,48 +16,128 @@
      }
 
     main {
-      background-image: url(./assets/background-image.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      } 
+     background-image: url(./assets/background-image.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     } 
+
+    main:nth-last-child(3) {
+     margin-bottom: 0;
+     }
 
     .page[style^="border-color"]:before {
 
-      border-width: 0.5em;
-      border-style: solid none solid none;
-      }
+     border-width: 0.5em;
+     border-style: solid none solid none;
+     }
 
-      [data-tag] > *:first-child:after {
-        font-size: 0.6em;
-        line-height: 1rem;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        display: inline-block;
-        padding: 0em 0.75em;
-        border-radius: 15px;
-        height: 1rem;
-        margin-left: 0.5em;
-        margin-top: -1px;
-        vertical-align: middle;
-        box-shadow: inset 0 0 0 1px;
-        opacity: 0.5;
-        transition: opacity 0.2s linear;
-      }
-      [data-tag]:hover > *:first-child:after {
-        color: #ffffff;
-        opacity: 1;
-        box-shadow: none;
-      }
-      [data-tag="work"] > *:first-child:after { content: "work"; }
-      [data-tag="business"] > *:first-child:after { content: "business"; }
-      [data-tag="awards"] > *:first-child:after { content: "awards"; }
-      [data-tag="cinematograph"] > *:first-child:after { content: "cinematograph"; }
-      [data-tag="education"] > *:first-child:after { content: "contribution to education"; }
-      [data-tag="work"]:hover > *:first-child:after { background: rgb(0, 0, 134); }
-      [data-tag="business"]:hover > *:first-child:after { background: rgb(1, 121, 61); }
-      [data-tag="awards"]:hover > *:first-child:after { background: rgb(255, 196, 0); }
-      [data-tag="education"]:hover > *:first-child:after { background: rgb(139, 0, 0); }
-      [data-tag="cinematograph"]:hover > *:first-child:after { background: rgb(72, 0, 75); }
+    .avatar-wrapper {
+     padding: 0 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     }
+
+    .hvr-sweep-to-right {
+     display: inline-block;
+     vertical-align: middle;
+     -webkit-transform: perspective(1px) translateZ(0);
+     transform: perspective(1px) translateZ(0);
+     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+     position: relative;
+     -webkit-transition-property: color;
+     transition-property: color;
+     -webkit-transition-duration: 0.3s;
+     transition-duration: 0.3s;
+     }
+
+    .hvr-sweep-to-right:before {
+     content: "";
+     position: absolute;
+     z-index: -1;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgb(66, 1, 12);
+     -webkit-transform: scaleX(0);
+     transform: scaleX(0);
+     -webkit-transform-origin: 0 50%;
+     transform-origin: 0 50%;
+     -webkit-transition-property: transform;
+     transition-property: transform;
+     -webkit-transition-duration: 0.3s;
+     transition-duration: 0.3s;
+     -webkit-transition-timing-function: ease-out;
+     transition-timing-function: ease-out;
+     }
+
+    .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+     color: white;
+     }
+
+    .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+     -webkit-transform: scaleX(1);
+     transform: scaleX(1);
+     }
+
+    .footer {
+     box-sizing: border-box;
+     padding-top: 50px;
+     height: 200px;
+     }
+
+    .elevator {
+     text-align: center;
+     cursor: pointer;
+     width: 140px;
+     margin: auto;
+     }
+
+    .elevator:hover {
+     opacity: 0.4;
+     }
+
+    .elevator svg {
+     width: 40px;
+     height: 40px;
+     display: block;
+     margin: auto;
+     margin-bottom: 5px;
+     }
+
+    [data-tag] > *:first-child:after {
+     font-size: 0.6em;
+     line-height: 1rem;
+     letter-spacing: 0.5px;
+     text-transform: uppercase;
+     display: inline-block;
+     padding: 0em 0.75em;
+     border-radius: 15px;
+     height: 1rem;
+     margin-left: 0.5em;
+     margin-top: -1px;
+     vertical-align: middle;
+     box-shadow: inset 0 0 0 1px;
+     opacity: 0.5;
+     transition: opacity 0.2s linear;
+     }
+
+    [data-tag]:hover > *:first-child:after {
+     color: #ffffff;
+     opacity: 1;
+     box-shadow: none;
+     }
+    [data-tag="work"] > *:first-child:after { content: "work"; }
+    [data-tag="business"] > *:first-child:after { content: "business"; }
+    [data-tag="awards"] > *:first-child:after { content: "awards"; }
+    [data-tag="cinematograph"] > *:first-child:after { content: "cinematograph"; }
+    [data-tag="education"] > *:first-child:after { content: "contribution to education"; }
+    [data-tag="work"]:hover > *:first-child:after { background: rgb(0, 0, 134); }
+    [data-tag="business"]:hover > *:first-child:after { background: rgb(1, 121, 61); }
+    [data-tag="awards"]:hover > *:first-child:after { background: rgb(255, 196, 0); }
+    [data-tag="education"]:hover > *:first-child:after { background: rgb(139, 0, 0); }
+    [data-tag="cinematograph"]:hover > *:first-child:after { background: rgb(72, 0, 75); }
   
      </style>
   </head>
@@ -124,7 +206,7 @@
 								<ul class="timeline">
                   <li class="details">
                     <input type="checkbox" id="other" checked>
-                    <label for="other" class="summary"><h3>Experience</h3></label>
+                    <label for="other" class="summary"><h3 class="hvr-sweep-to-right">Experience</h3></label>
                     <div>
                       <ul>
 									<li class="highlighted" data-tag="work">
@@ -230,12 +312,11 @@
                 </li>
               </ul>
             </div>
-
                 </ul>
 								<ul class="timeline">
                   <li class="details">
                     <input type="checkbox" id="other">
-                    <label for="other" class="summary"><h3>Personal Life</h3></label>
+                    <label for="other" class="summary"><h3 class="hvr-sweep-to-right">Personal Life</h3></label>
                     <div>
                       <ul>
                   <li>
@@ -287,49 +368,47 @@
                         <li>Married Czech model Ivana Zelníčková</li>
                       </ul>
                     </li>
-
                   </li>
                 </ul>
               </div>
                 </ul>
-                </section>
-                
+                </section>               
               </div>
               <div class="six wide column">
                 <section>
-                  <h3>Languages</h3>
+                  <h3 class="hvr-sweep-to-right">Languages</h3>
                   <p class="tags small"><span class="language" lang="en">&#x1f1fa;&#x1f1f8; ENGLISH </span><span class="language" lang="ru">&#x1f1f7;&#x1f1fa; РУССКИЙ </span></p>
                 </section>
                 <section>
 
                   <section>
-                    <h3>Skills</h3>
-                    <p class="tags small">NEGOTIATING COUNTING REMODELING WRITING ACING SINGING REPORTING INCORPORATING SELLING ADVERTISING HOSTING COMPETING TWITTING PARENTING GAMBLING DATING SUING ORGANIZING FUNDING DEBATING ADVISING PRESBYTERIANING</p>
+                    <h3 class="hvr-sweep-to-right">Skills</h3>
+                    <p class="tags small bulleted"><span class="tag">NEGOTIATING</span><span class="tag">COUNTING</span><span class="tag">REMODELING</span><span class="tag">WRITING</span><span class="tag">ACING</span><span class="tag">SINGING</span><span class="tag">REPORTING</span><span class="tag">INCORPORATING</span><span class="tag">SELLING</span><span class="tag">ADVERTISING</span><span class="tag">HOSTING</span><span class="tag">COMPETING</span><span class="tag">TWITTING</span><span class="tag">PARENTING</span><span class="tag">GAMBLING</span><span class="tag">DATING</span><span class="tag">SUING</span><span class="tag">ORGANIZING</span><span class="tag">FUNDING</span><span class="tag">DEBATING</span><span class="tag">ADVISING</span><span class="tag">PRESBYTERIANING</span></p>
                   </section>
                 
                   <section>
-                    <h3>Character</h3>
-                    <p class="tags small">ADJUSTED CALM AMBITIOUS COMPETITIVE SOCIABLE DIRECT HOSTILE CARELESS IGNORANT INQUISITIVE BOLD CONFIDENT MISCHIEVOUS CHARMING INTERESTING DARING COLORFUL LAZY SELF-PROMOTING</p>
+                    <h3 class="hvr-sweep-to-right">Character</h3>
+                    <p class="tags small bulleted"><span class="tag">ADJUSTED</span><span class="tag">CALM</span><span class="tag">AMBITIOUS</span><span class="tag">COMPETITIVE</span><span class="tag">SOCIABLE</span><span class="tag">DIRECT</span><span class="tag">HOSTILE</span><span class="tag">CARELESS</span><span class="tag">IGNORANT</span><span class="tag">INQUISITIVE</span><span class="tag">BOLD</span><span class="tag">CONFIDENT</span><span class="tag">MISCHIEVOUS</span><span class="tag">CHARMING</span><span class="tag">INTERESTING</span><span class="tag">DARING</span><span class="tag">COLORFUL</span><span class="tag">LAZY</span><span class="tag">SELF-PROMOTING</span></p>
                   </section>
                 
                   <section>
-                    <h3>Likes&#x1f603;</h3>
-                    <p class="tags small"><a href="https://www.youtube.com/watch?v=u_aLESDql1U" rel="external">BILLIONS</a> FILET-O-FISH BIG MAC <a href="https://www.youtube.com/watch?v=RDrfE9I8_hs" rel="external">CHINA</a> QUARTER POUNDER DIET COKE TARIFFS BIBLE ARTOF DEAL PATRIOTS BEAUTIFUL MODELS GOLD REAL ESTATE WAR PROTESTERS CONSTRUCTION RUSSIANS BANKS SPORTS WOMEN MEXICO RED HAT KOREANS GOLF <a href="https://www.youtube.com/watch?v=0f9ysmciWUk" rel="external">EVERYBODY</a></p>
+                    <h3 class="hvr-sweep-to-right">Likes&#x1f603;</h3>
+                    <p class="tags small bulleted"><span class="tag"><a href="https://www.youtube.com/watch?v=u_aLESDql1U" rel="external">BILLIONS</a></span><span class="tag">FILET-O-FISH</span><span class="tag">BIG MAC</span><span class="tag"><a href="https://www.youtube.com/watch?v=RDrfE9I8_hs" rel="external">CHINA</a></span><span class="tag">QUARTER POUNDER</span><span class="tag">DIET COKE</span><span class="tag">TARIFFS</span><span class="tag">BIBLE</span><span class="tag">ARTOF DEAL</span><span class="tag">PATRIOTS</span><span class="tag">BEAUTIFUL MODELS</span><span class="tag">GOLD</span><span class="tag">REAL ESTATE</span><span class="tag">WAR PROTESTERS</span><span class="tag">CONSTRUCTION</span><span class="tag">RUSSIANS</span><span class="tag">BANKS</span><span class="tag">SPORTS</span><span class="tag">WOMEN</span><span class="tag">MEXICO</span><span class="tag">RED HAT</span><span class="tag">KOREANS GOLF</span><span class="tag"><a href="https://www.youtube.com/watch?v=0f9ysmciWUk" rel="external">EVERYBODY</a></span></p>
                       
                   </section>
               
                   <section>
-                    <h3>Dislikes&#x1f61e;</h3>
-                    <p class="tags small">DOGS MEDIA CNN GERMANS MEXICANS IMMIGRANTS SHITHOLE COUNTRIES UNATTRACTIVE WOMEN BLACKS SUSHI HOT-DOGS ALCOHOL FRUIT CHRISTMAS PARTIES LIBERALS</p>
+                    <h3 class="hvr-sweep-to-right">Dislikes&#x1f61e;</h3>
+                    <p class="tags small bulleted"><span class="tag">DOGS</span><span class="tag">MEDIA</span><span class="tag">CNN</span><span class="tag">GERMANS</span><span class="tag">MEXICANS</span><span class="tag">IMMIGRANTS</span><span class="tag">SHITHOLE COUNTRIES</span><span class="tag">UNATTRACTIVE WOMEN</span><span class="tag">BLACKS</span><span class="tag">SUSHI</span><span class="tag">HOT-DOGS</span><span class="tag">ALCOHOL</span><span class="tag">FRUIT</span><span class="tag">CHRISTMAS</span><span class="tag">PARTIES</span><span class="tag">LIBERALS</span></p>
                   </section>
                 
                   <section>
-                    <h3>Wants&#x1f97a;</h3>
+                    <h3 class="hvr-sweep-to-right">Wants&#x1f97a;</h3>
                     <p class="tags small bulleted"><span class="tag">BE HEALTHY</span><span class="tag">GROW A TREE</span><span class="tag">BUILD TRUMP AIRPORT</span><span class="tag">HAVE A TASTE</span><span class="tag">DO A HARLEM SHAKE IN CONGRESS</span><span class="tag">TO GOLF MORE OFTEN</span><span class="tag">WIN ALL THE COURT SUITS</span></p>
                   </section>
                 
                   <section>
-                    <h3>Education&#x1F393;</h3>
+                    <h3 class="hvr-sweep-to-right">Education&#x1F393;</h3>
                     <ul class="timeline">
                       <li>
                         <p><strong><em>2011</em></strong></p>
@@ -357,7 +436,7 @@
                   <ul class="timeline">
                     <li class="details">
                       <input type="checkbox" id="other">
-                      <label for="other" class="summary"><h3>Media Career</h3></label>
+                      <label for="other" class="summary"><h3 class="hvr-sweep-to-right">Media Career</h3></label>
                       <div>
                         <ul>
                           <li data-tag="awards">
@@ -479,5 +558,27 @@
         </div>
       </article>
     </main>
+
+    <div class="footer">
+      <div class="do-the-thing">
+          <div class="elevator">
+              <svg class="sweet-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" height="100px" width="100px">
+                  <path d="M70,47.5H30c-1.4,0-2.5,1.1-2.5,2.5v40c0,1.4,1.1,2.5,2.5,2.5h40c1.4,0,2.5-1.1,2.5-2.5V50C72.5,48.6,71.4,47.5,70,47.5z   M47.5,87.5h-5v-25h5V87.5z M57.5,87.5h-5v-25h5V87.5z M67.5,87.5h-5V60c0-1.4-1.1-2.5-2.5-2.5H40c-1.4,0-2.5,1.1-2.5,2.5v27.5h-5  v-35h35V87.5z"/>
+                  <path d="M50,42.5c1.4,0,2.5-1.1,2.5-2.5V16l5.7,5.7c0.5,0.5,1.1,0.7,1.8,0.7s1.3-0.2,1.8-0.7c1-1,1-2.6,0-3.5l-10-10  c-1-1-2.6-1-3.5,0l-10,10c-1,1-1,2.6,0,3.5c1,1,2.6,1,3.5,0l5.7-5.7v24C47.5,41.4,48.6,42.5,50,42.5z"/>
+              </svg>
+              Back to Top
+          </div>
+      </div>
+  </div>
+
+  <script>
+    var elementButton = document.querySelector('.elevator');
+    var elevator = new Elevator({
+        element: elementButton,
+        mainAudio: './music/elevator.mp3',
+        endAudio:  './music/ding.mp3'
+    });
+</script>
+
   </body>
 </html>
